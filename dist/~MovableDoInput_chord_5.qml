@@ -45,6 +45,7 @@ MuseScore {
                 for (var i in curScore.selection.elements) {
                     var element = curScore.selection.elements[i];
                     cursor.rewindToTick(getElementTick(element));
+                    cursor.track = element.track;
                     selectedElement = element;
                     break;
                 }
