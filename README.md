@@ -2,7 +2,7 @@
 
 <img align=right src="./MovableNoteInput.png" width=220px />
 
-> ⚠️ **This plugin will only work on MuseScore 4. It will CRASH MuseScore 3 due to some internal bugs.**
+> The same plugin set works on both MuseScore 3 and 4.
 
 This is a set of plugins that implements [the Movable-Do note input mode for computer keyboard](https://github.com/musescore/MuseScore/issues/21880). It mainly exists as a proof-of-concept.
 
