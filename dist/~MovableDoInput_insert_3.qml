@@ -52,8 +52,8 @@ MuseScore {
             keysig_potential = cursor.keySignature;
 
             // == 2. Kill switch
-            if(element) {
-                var part = element.staff.part;
+            if(selectedElement) {
+                var part = selectedElement.staff.part;
                 if(part.hasDrumStaff) {
                     keysig_potential = 0;
                 }
