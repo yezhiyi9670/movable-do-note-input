@@ -42,7 +42,7 @@ When typing in drum staves, Movable-Do mode will be auto-disabled. You must alwa
 
 If an ordinary key used in text input is assigned to one of the plugins, it will invoke the plugin instead of typing the character even if the cursor is inside a text box. This does not seem possible to avoid using plugin API.
 
-You may use numpad keys for note input if you do not use them to type numbers in MuseScore.
+There is a temporary workaround which may only work well when typing chord symbols.
 
 ### Chromatic Alterations
 

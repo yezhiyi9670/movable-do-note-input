@@ -32,6 +32,11 @@ MuseScore {
                 Element.BEND, Element.TAB_DURATION_SYMBOL, Element.HAIRPIN, Element.LET_RING,
                 Element.TEXTLINE, Element.TEXTLINE_BASE, Element.LYRICSLINE, Element.GLISSANDO
             ].indexOf(selection.elements[0].type) != -1) {
+                var character = 'f';
+                var element = selection.elements[0];
+                if(character != null && element.text != undefined) {
+                    element.text = element.text + character;
+                }
                 return true;
             }
         }
@@ -45,10 +50,10 @@ MuseScore {
         return segment.tick;
     }
     onRun: {
-        // if(isInTextInput()) {
-        //     _quit();
-        //     return;
-        // }
+        if(isInTextInput()) {
+            _quit();
+            return;
+        }
 
         var keysig_potential = 0;
         // var isEnabled = settings.movableDoEnabled;
