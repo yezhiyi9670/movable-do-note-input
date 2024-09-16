@@ -21,6 +21,22 @@ MuseScore {
     function _quit() {
         (typeof(quit) === 'undefined' ? Qt.quit : quit)();
     }
+    function isInTextInput() {
+        var selection = curScore.selection;
+        if(!selection.isRange && selection.elements.length == 1) {
+            if([
+                Element.TEXT, Element.SYMBOL, Element.MEASURE_NUMBER, Element.INSTRUMENT_NAME,
+                Element.AMBITUS, Element.DYNAMIC, Element.LYRICS, Element.JUMP, Element.FINGERING,
+                Element.TEMPO_TEXT, Element.STAFF_TEXT, Element.SYSTEM_TEXT, Element.REHEARSAL_MARK,
+                Element.INSTRUMENT_CHANGE, Element.STAFFTYPE_CHANGE, Element.HARMONY, Element.FRET_DIAGRAM,
+                Element.BEND, Element.TAB_DURATION_SYMBOL, Element.HAIRPIN, Element.LET_RING,
+                Element.TEXTLINE, Element.TEXTLINE_BASE, Element.LYRICSLINE, Element.GLISSANDO
+            ].indexOf(selection.elements[0].type) != -1) {
+                return true;
+            }
+        }
+        return false;
+    }
     function getElementTick(element) {
         var segment = element;
         while (segment.parent && segment.type != Element.SEGMENT) {
@@ -29,6 +45,11 @@ MuseScore {
         return segment.tick;
     }
     onRun: {
+        // if(isInTextInput()) {
+        //     _quit();
+        //     return;
+        // }
+
         var keysig_potential = 0;
         // var isEnabled = settings.movableDoEnabled;
         var isEnabled = curScore.metaTag("__movable_note_input_toggle").toLowerCase() == 'on';

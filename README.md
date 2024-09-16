@@ -38,6 +38,12 @@ When typing in drum staves, Movable-Do mode will be auto-disabled. You must alwa
 
 ## Known Issues
 
+### MuseScore 3: Text Input Blocked
+
+If an ordinary key used in text input is assigned to one of the plugins, it will invoke the plugin instead of typing the character even if the cursor is inside a text box. This does not seem possible to avoid using plugin API.
+
+You may use numpad keys for note input if you do not use them to type numbers in MuseScore.
+
 ### Chromatic Alterations
 
 When typing across chromatic alterations in note input mode, the plugin may not instantly realize the key signature change. To workaround, exit note input mode and re-enter it when crossing chromatic alterations.
